@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="final.js" defer></script>
+    <link rel="stylesheet" href="styl.css">
+    <title>Hogwarts assignment front-end-justjavascript</title>
+</head>
+
+<body>
+
+    <section class="container">
+        <div class="searchbar content search ">
+            <input type="text" id="searchInput" placeholder="please type the name of student you are looking for">
+            <button id="searchButton">Search</button>   
+        </div>
+        <section class="filter">
+            <div class="filter-system">
+                <div>
+                    <p class="gryfStudents"></p>
+                    <button class="filter" id="Gryffindor" data-action="filter"
+                        data-filter="Gryffindor">Gryffindor</button>
+                </div>
+                <div>
+                    <p class="slythStudents"></p>
+                    <button class="filter" id="Slytherin" data-action="filter"
+                        data-filter="Slytherin">Slytherin</button>
+                </div>
+                <div>
+                    <p class="hufflepuffStudents"></p>
+                    <button class="filter" id="Hufflepuff" data-action="filter"
+                        data-filter="Hufflepuff">Hufflepuff</button>
+                </div>
+                <div>
+                    <p class="ravenclawStudents"></p>
+                    <button class="filter" id="Ravenclaw" data-action="filter"
+                        data-filter="Ravenclaw">Ravenclaw</button>
+                </div>
+                <div>
+                    <p class="totalStudents"></p>
+                    <button class="filter" id="*" data-action="filter" data-filter="*">Enrolled Students</button>
+                </div>
+                <div>
+                    <p class="expelledStudents"></p>
+                    <button class="filter" id="Expelled" data-action="filter" data-filter="Expelled">Expelled
+                        Students</button>
+                </div>
+            </div>
+            <div class="howMany">
+                <p class="numberOfCurrentStudents"></p>
+            </div>
+            <section class="hacked">
+                <button class="hackButton">Hack The System</button>
+            </section>
+        </section>
+
+        <table id="list" class="table">
+            <thead>
+                <tr>
+
+                    <th data-action="sort" data-sort-direction="desc" data-sort="image">Image</th>
+                    <th data-action="sort" data-sort-direction="desc" data-sort="firstName">First Name</th>
+                    <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+
+                 
+                    <th data-action="sort" data-sort-direction="desc" data-sort="house">House</th>
+                 
+                    <th>Prefect</th>
+                    <th>Inq. Squad</th>
+                </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+        </table>
+
+
+    </section>
+
+
+    <template id="student">
+        <tr>
+
+            <td class="student0" data-field="image">
+                <img src="" alt="" />
+            </td>
+            <td class="student1" data-field="firstName">First Name</td>
+            <td class="student2" data-field="lastName">Last Name</td>
+            <td class="student3" data-field="house">House</td>
+        
+            <td data-field="winner">Prefect</td>
+            <td data-field="stars">Inq. Squad</td>
+        </tr>
+    </template>
+
+    <div id="popup" class="hidden">
+        <div class="popup_page">
+            <button class="closePopUp">X</button>
+            <article class="popup_article">
+                <div class="student_info">
+                    <img data-field="image" src="" alt="">
+                    <div class="name_container">
+                        <div>
+                            <p data-field="firstName"></p>
+                            <p data-field="middleName"></p>
+                            <p data-field="nickName"></p>
+                            <p data-field="lastName"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="student_info">
+                    <p>Gender:</p>
+                    <p data-field="gender"></p>
+                </div>
+                <div class="student_info">
+                    <p>House:</p>
+                    <p data-field="house"></p>
+                </div>
+                <div class="student_info">
+                    <p>Blood:</p>
+                    <p data-field="blood"></p>
+                </div>
+                <div class="student_info">
+                    <p>Prefect:</p>
+                    <p data-field="winner"></p>
+                </div>
+                <div class="student_info">
+                    <p>Inq. Squad:</p>
+                    <p data-field="stars"></p>
+                </div>
+                <div class="student_info">
+                    <p>Expelled:</p>
+                    <p data-field="expelled"></p>
+                </div>
+                <button class="expelStudent">Expel</button>
+                <!-- <button class="enrollStudent">Enroll</button> -->
+            </article>
+        </div>
+    </div>
+
+    <div id="remove_other" class=" hidden">
+        <div class="dialog">
+            <button class="close_button">X</button>
+            <h1>Warning!</h1>
+            <br>
+            <p>There can only be 2 Prefects <br> of each gender per house...</p>
+            <br>
+            <button class="remove_button">Remove <span data-field="otherwinner">other student with same
+                    gender</span></button>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+/* Custom color variables */
+:root {
+    --gryffindor: #820305;
+    --slytherin: #225d37;
+    --hufflepuff: #a79841;
+    --ravenclaw: #172861;
+    --default: black;
+    --highlight: grey;
+    --background: rgb(192, 187, 158);
+    --backgroundlighter: rgb(230, 222, 178);
+  }
+  
+  /* Set background color and margin for the body */
+  body {
+    margin-top: 2vh;
+    background-color: var(--background);
+  }
+  
+  /* Main container rid */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+  }
+  
+  /* Content grid */
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+  }
+  
+  /* Filter section */
+  .filter {
+    grid-column: 1;
+    height: 100%;
+  }
+  
+  /* Search section */
+  .search {
+    grid-column: span 2;
+  }
+  
+  /* Reset margins and padding for specific sections */
+  .container,
+  .filter,
+  .content,
+  .search {
+    margin: auto;
+  }
+  
+  /* Hacked section */
+  .hacked {
+    grid-column: span 2;
+    margin: 10rem auto;
+  }
+  
+  .hacked button {
+    box-sizing: border-box;
+    padding: 1rem;
+    font-family: var(--creepy);
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  
+  /* Filter system */
+  .filter-system {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-system div:hover {
+    background-color: var(--backgroundlighter);
+  }
+  
+  .filter div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+  }
+  
+  .filter button {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid;
+    font-family: var(--creepy);
+    width: 100%;
+  }
+  
+  .howMany {
+    background-color: #225d37;
+    margin-top: 1vh;
+  }
+  
+  /* Search bar */
+  .searchbar {
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 80%;
+  }
+  
+  /* Table */
+  .table {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: antiquewhite;
+    border-radius: 10px;
+
+  }
+  
+  /* Rounded image */
+  img {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+  
+  /* Hidden class */
+  .hidden {
+    visibility: hidden;
+  }
+  
+  /* Popup */
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px;
+  }
+  
+  #popup .popup_page .closePopUp {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+  }
+  
+  #popup .popup_page {
+    padding: 1rem;
+    background-color: antiquewhite;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #popup .popup_article {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #popup .popup_article .student_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dialog {
+    box-shadow: 1px 1px 10px #333;
+    padding: 2rem;
+    background-color: var(--highlight);
+    position: relative;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  
+    .filter {
+      grid-column: 1 / span 1;
+    }
+  
+    .hacked {
+      grid-column: 1 / span 1;
+    }
+  
+    .table {
+      grid-column: 1 / span 1;
+      
+    }
+  }
+  
